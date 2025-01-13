@@ -29,7 +29,7 @@ void data_output(int count, struct student *s) {
 	}
 	printf("User entered data:\n");
 	for(int i=0; i<count; i++) {
-		printf("%s\t%s\t%d\t%d", (s+i)->name, (s+i)->lastname, 
+		printf("%s\t%s\t%d\t%d\n", (s+i)->name, (s+i)->lastname, 
 					(s+i)->group_id, (s+i)->course);
 	}
 exit: //cleanups here

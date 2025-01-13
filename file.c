@@ -50,17 +50,23 @@ struct student *data_read(const char *file, int *count){
 	
 	data = (struct student *)malloc(sizeof(struct student));
 	if (!data)
-		return data;
+		goto exit;
 		
 	while(1){
-		br = read(fd, data + count, sizeof(struct student));
-		if (br < sizeof(struct student))
+		br = read(fd, data + *count, sizeof(struct student));
+		printf("Read %lu bytes\n", br);
+		if (br < sizeof(struct student)){
 			break;
-		*count++;
+		}
+		(*count)++;
 		data = (struct student *)realloc(data, sizeof(struct student)*(*count + 1));
-		if (!data)
+		if (!data) {
+			printf("Realloc failed\n");
 			break;
+		}
 	}
 	
+exit:
+	close(fd);
 	return data;
 }

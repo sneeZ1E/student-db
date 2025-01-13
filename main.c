@@ -24,7 +24,7 @@ int main() {
 		if (!data)
 			printf("Error reading database: %m\n");
 		else
-			data_output(data, c);
+			data_output(c, data);
 	}
 	
 	printf("Please enter number of students: \n");

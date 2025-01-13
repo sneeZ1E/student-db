@@ -1,4 +1,5 @@
 #define MAX_STUDENTS	10
+#include <stdio.h>
 
 enum{
 	DATA_SAVE_OK,

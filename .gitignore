@@ -1,3 +1,4 @@
 *.o
 student_db
 data.bin
+openwrt
